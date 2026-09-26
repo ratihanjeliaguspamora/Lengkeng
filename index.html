@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Informasi Lengkeng</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #fcf0e4, #fffaf5);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #6B4226,
+                    #8B5A2B,
+                    #A66A3F
+                );
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px 55px;
+
+            border-radius: 0 0 40px 40px;
+
+            box-shadow:
+                0 8px 25px #C48A5A(71, 29, 95, 0.3);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            top: -70px;
+            left: -50px;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 50%;
+            bottom: -120px;
+            right: -60px;
+        }
+
+        .fruit-icon {
+            font-size: 65px;
+            margin-bottom: 10px;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 15px;
+            opacity: 0.92;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 900px;
+            margin: -30px auto 50px;
+            padding: 0 18px;
+        }
+
+
+        /* =========================
+           IMAGE CARD
+        ========================= */
+
+        .fruit-card {
+            background: white;
+            padding: 15px;
+            border-radius: 28px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.09);
+
+            margin-bottom: 22px;
+
+            transition: 0.3s;
+        }
+
+        .fruit-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .fruit-image {
+            width: 100%;
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 22px;
+
+            display: block;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            background: white;
+
+            border-radius: 24px;
+
+            padding: 27px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 7px 22px rgba(0,0,0,0.06);
+
+            border-left: 6px solid #D9A66C (327, 96%, 68%);
+
+            transition: 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section h2 {
+            color: #18571e;
+
+            font-size: 23px;
+
+            margin-bottom: 14px;
+        }
+
+        .section p {
+            font-size: 15px;
+
+            line-height: 1.85;
+
+            text-align: justify;
+        }
+
+
+        /* =========================
+           INFORMASI UMUM
+        ========================= */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+
+            margin-top: 18px;
+        }
+
+        .info-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #F0D5B5,
+                    #FFF3E0
+                );
+
+            padding: 19px;
+
+            border-radius: 18px;
+
+            border: 1px solid   #bb884a;
+        }
+
+        .info-box strong {
+            display: block;
+
+            color: #6B4226;
+
+            margin-bottom: 7px;
+
+            font-size: 15px;
+        }
+
+        .info-box span {
+            font-size: 14px;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           HABITAT
+        ========================= */
+
+        .habitat-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf8e9,
+                    #f9fff6
+                );
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            border-left: 5px solid #5b9b45;
+        }
+
+        .habitat-box h3 {
+            color: #477c37;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           PENYEBARAN
+        ========================= */
+
+        .distribution {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 18px;
+        }
+
+        .region {
+            background: #F0D5B5;
+
+            border-radius: 16px;
+
+            padding: 16px;
+
+            border: 1px solid #FFF3E0;
+
+            transition: 0.3s;
+        }
+
+        .region:hover {
+            background: #ffe2eb;
+
+            transform: scale(1.02);
+        }
+
+        .region strong {
+            color: #6B4226;
+
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+        .region span {
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           SENTRA BUDIDAYA
+        ========================= */
+
+        .sentra {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 13px;
+
+            margin: 14px 0;
+
+            padding: 14px;
+
+            background: #F0D5B5;
+
+            border-radius: 15px;
+        }
+
+        .sentra-icon {
+            min-width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            background: #6B4226;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 18px;
+        }
+
+        .sentra-text {
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+        .sentra-text strong {
+            color: #6B4226;
+        }
+
+
+        /* =========================
+           CIRI-CIRI
+        ========================= */
+
+        .characteristics {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 13px;
+
+            margin-top: 15px;
+        }
+
+        .characteristic {
+            padding: 17px;
+
+            background: #F0D5B5;
+
+            border-radius: 16px;
+        }
+
+        .characteristic h3 {
+            color: #6B4226;
+
+            font-size: 16px;
+
+            margin-bottom: 6px;
+        }
+
+        .characteristic p {
+            font-size: 14px;
+
+            text-align: left;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MANFAAT
+        ========================= */
+
+        .benefit {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            margin: 14px 0;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+        .benefit-icon {
+            min-width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            background: #6B4226;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        /* =========================
+           CARA PERAWATAN JAMBU AIR
+        ========================= */
+
+        .info-section {
+            margin: 30px 0;
+        }
+
+        .info-section h2 {
+            text-align: center;
+
+            margin-botom: 5px;
+        }
+
+        .info-card {
+            background: #FFF0F0;
+
+            border-left: 5px solid #6B4226;
+
+            padding: 18px;
+
+            margin-bottom: 8px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 4px 10px rgba(198, 40, 40, 0.12);
+        }
+
+        .info-card h3 {
+            color:  #6B4226;
+
+            margin-bottom: 1px;
+        } 
+
+        .info-card p {
+            color: #4a4a4a;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FAKTA MENARIK
+        ========================= */
+
+        .fact {
+            background:
+                linear-gradient(
+                    135deg,
+                    #6B4226,
+                    #8B5A2B,
+                    #A66A3F
+                );
+
+            color: white;
+
+            border: none;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .fact h2 {
+            color: white;
+
+            margin-bottom: 13px;
+        }
+
+        .fact p {
+            text-align: center;
+
+            color: white;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MUSIK
+        ========================= */
+
+        .music-box {
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 100;
+        }
+
+        .music-button {
+            border: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6B4226,
+                    #8B5A2B
+                );
+
+            color: white;
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            font-size: 23px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 18px rgba(0,0,0,0.25);
+
+            transition: 0.3s;
+        }
+
+        .music-button:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px 15px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 38px 18px 48px;
+            }
+
+            .header h1 {
+                font-size: 29px;
+            }
+
+            .fruit-icon {
+                font-size: 52px;
+            }
+
+            .fruit-image {
+                height: 230px;
+            }
+
+            .info-grid,
+            .distribution,
+            .characteristics {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 21px;
+
+                border-left-width: 4px;
+            }
+
+            .section h2 {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <div class="fruit-icon">
+            🍈
+        </div>
+
+        <h1>Lengkeng</h1>
+
+        <p>
+            Mengenal lebih dekat buah tropis Indonesia
+        </p>
+
+    </header>
+
+
+
+    <main class="container">
+
+
+        <!-- =========================
+             GAMBAR
+        ========================= -->
+
+        <div class="fruit-card">
+
+            <!--
+                GANTI URL GAMBAR INI
+                DENGAN GAMBAR LENGKENG
+                YANG KAMU GUNAKAN
+            -->
+
+            <img
+                class="fruit-image"
+                src="lengkeng.jpeg"
+                alt="Lengkeng"
+            >
+
+        </div>
+
+
+
+        <!-- =========================
+             TENTANG JAMBU AIR
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🌿 Tentang Lengkeng</h2>
+
+            <p>
+             Lengkeng merupakan buah tropis yang memiliki rasa manis dan aroma yang khas.
+             Buah ini memiliki nama ilmiah Dimocarpus longan dan termasuk dalam famili Sapindaceae.Lengkeng banyak dibudidayakan 
+             di Indonesia, baik di perkebunan maupun pekarangan rumah.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             INFORMASI UMUM
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🔎 Informasi Umum</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <strong>Nama Lokal</strong>
+
+                    <span>
+                        Lengkeng
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Nama Ilmiah</strong>
+
+                    <span>
+                        Dimocarpus longan
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Famili</strong>
+
+                    <span>
+                        Sapindaceae
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Warna Buah</strong>
+
+                    <span>
+                        Cokelat muda hingga cokelat kekuningan
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Daging Buah</strong>
+
+                    <span>
+                       Putih bening dan berair
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>Bentuk Buah</strong>
+
+                    <span>
+                        Bulat kecil dan tumbuh bergerombol
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CIRI-CIRI
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🍃 Ciri-Ciri Lengkeng</h2>
+
+            <div class="characteristics">
+
+                <div class="characteristic">
+
+                    <h3>🌳 Pohon</h3>
+
+                    <p>
+                   Pohon lengkeng dapat tumbuh sekitar 10 hingga 20 meter 
+                   dengan batang yang cukup besar dan memiliki banyak cabang.
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>🍎 buah</h3>
+
+                    <p>
+                        Buah berbentuk bulat kecil dan biasanya tumbuh dalam tandan yang terdiri dari banyak buah.
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>🌿 Daun</h3>
+
+                    <p>
+                      Buah berbentuk bulat kecil dan biasanya tumbuh dalam tandan yang terdiri dari banyak buah.
+                    </p>
+
+                </div>
+
+
+                <div class="characteristic">
+
+                    <h3>🤍 Daging Buah</h3>
+
+                    <p>
+                        Daging buah berwarna putih bening, bertekstur kenyal, berair, dan memiliki rasa manis.
+                    </p>
+
+                </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             HABITAT
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🌱 Habitat Lengkeng</h2>
+
+            <div class="habitat-box">
+
+                <h3>🌿 Habitat Alami dan Budidaya</h3>
+
+                <p>
+                 Lengkeng dapat tumbuh dengan baik di daerah tropis dan subtropis. Tanaman ini 
+                 membutuhkan sinar matahari yang cukup, tanah yang subur, serta drainase yang baik.
+                </p>
+
+                <p style="margin-top: 12px;">
+                    Lengkeng dapat dibudidayakan di pekarangan, kebun, dan perkebunan. Beberapa varietas juga dapat 
+                    tumbuh dengan baik di daerah dataran rendah hingga dataran tinggi.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PENYEBARAN INDONESIA
+        ========================= -->
+
+        <section class="section">
+
+            <h2>Penyebaran Lengkeng di Indonesia</h2>
+
+            <p>
+                Lengkeng tersebar di berbagai wilayah Indonesia,
+                terutama daerah yang memiliki kondisi iklim dan
+                lingkungan yang sesuai untuk pertumbuhan tanaman
+                manggis.
+            </p>
+
+
+            <div class="distribution">
+
+
+                <div class="region">
+
+                    <strong>Sumatera</strong>
+
+                    <span>
+                        Lengkeng dibudidayakan di beberapa wilayah 
+                        Sumatera, termasuk Sumatera Utara, Sumatera Barat, dan Riau.
+                    </span>
+
+                </div> 
+
+
+                <div class="region">
+
+                    <strong>Jawa</strong>
+
+                    <span>
+                       Budidaya lengkeng cukup berkembang di Jawa Tengah, Jawa Timur, dan Jawa Barat
+                    </span>
+
+                </div>
+
+
+                <div class="region">
+
+                    <strong>Bali</strong>
+
+                    <span>
+                      Lengkeng juga dapat ditemukan di beberapa wilayah Bali dan dibudidayakan oleh masyarakat.
+                    </span>
+                
+                </div>
+
+
+                <div class="region">
+
+                    <strong>Kalimantan dan Wilayah lainnya</strong>
+
+                    <span>
+                        Tanaman lengkeng juga dapat tumbuh di beberapa wilayah Kalimantan 
+                        dan daerah Indonesia lainnya dengan kondisi lingkungan yang sesuai.
+                    </span>
+                </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SENTRA BUDIDAYA
+        ========================= -->
+
+        <section class="section">
+
+            <h2>🚜 Sentra Budidaya Lengkeng di Indonesia</h2>
+
+            <p>
+                Lengkeng dibudidayakan di sejumlah daerah di
+                Indonesia. Beberapa wilayah dikenal sebagai
+                sentra produksi manggis karena memiliki kondisi
+                lingkungan dan kegiatan budidaya yang mendukung.
+            </p>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Jawa Tengah
+                    </strong>
+
+                    <br>
+
+                 Beberapa daerah seperti Semarang, Demak, dan Temanggung dikenal memiliki budidaya lengkeng
+                </div>
+
+            </div>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Jawa Timur
+                    </strong>
+
+                    <br>
+
+                    Lengkeng juga dibudidayakan di beberapa wilayah Jawa Timur,
+                    terutama daerah dengan kondisi lingkungan yang mendukung.
+                </div>
+
+            </div>
+
+
+            <div class="sentra">
+
+                <div class="sentra-icon">
+                    🌿
+                </div>
+
+                <div class="sentra-text">
+
+                    <strong>
+                        Sumatera Utara
+                    </strong>
+
+                    <br>
+
+                    Beberapa wilayah di Sumatera Utara juga mengembangkan tanaman lengkeng sebagai tanaman buah.
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             KANDUNGAN DAN MANFAAT
+        ========================= -->
+
+        <section class="section">
+
+            <h2>💜 Kandungan dan Manfaat</h2>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                   Mengandung vitamin C yang membantu mendukung daya tahan tubuh.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                  Mengandung serat yang membantu menjaga kesehatan pencernaan.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+                    Mengandung kalium dan beberapa mineral yang dibutuhkan tubuh.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+
+                <div class="benefit-icon">
+                    ✓
+                 </div>
+
+                <div>
+                    Mengandung antioksidan yang membantu melindungi sel tubuh dari kerusakan akibat radikal bebas.
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+
+                <div class="benefit-icon">
+                    ✓
+                 </div>
+
+                <div>
+                   Memiliki kandungan air dan gula alami yang memberikan rasa manis serta energi bagi tubuh.
+                </div>
+
+            </div>
+             
+
+
+        </section>
+
+
+
+         <!-- =========================
+             CARA PERAWATAN LENGKENG
+        ========================= -->
+
+        <section class="info-section">
+            
+            <h2>🌱 Cara Perawatan Lengkeng</h2>
+
+            <div class="info-card">
+                <h3>💧 Penyiraman</h3>
+                <p>
+                    Siram tanaman secara rutin, terutama saat musim kemarau. Hindari genangan air di sekitar akar.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <h3>☀️ Sinar Matahari</h3>
+                <p>
+                    Lengkeng membutuhkan sinar matahari yang cukup agar dapat tumbuh dengan baik dan membantu proses pembungaan.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <h3>✂️ Pemangkasan</h3>
+                <p>
+                   Pangkas cabang yang kering, rusak, atau terlalu lebat agar
+                    tanaman memiliki bentuk yang baik dan sirkulasi udara lebih lancar.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <h3>🌿 Pemupukan</h3>
+                <p>
+                    Berikan pupuk secara berkala sesuai kebutuhan tanaman untuk mendukung pertumbuhan daun, bunga, dan buah.
+                </p>
+            </div>
+            <div class="info-card">
+                <h3>🐛 Pengendalian Hama</h3>
+                <p>
+                     Periksa daun, bunga, dan buah secara rutin untuk mendeteksi hama atau penyakit sejak dini.
+                </p>
+            </div>
+       
+        </section>
+
+
+
+        <!-- =========================
+             FAKTA MENARIK
+        ========================= -->
+
+        <section class="section fact">
+
+            <h2>✨ Tahukah Kamu?</h2>
+
+            <p>
+                Lengkeng sering disebut sebagai “mata naga” dalam beberapa budaya karena bagian daging
+                buahnya yang putih bening dan bijinya yang berwarna hitam menyerupai mata. 👁️🍈
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            ATPH SMKN 1 DUA KOTO 2026
+        </p>
+
+        <p>
+            © 2026 | ratihanjeliaguspamora
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         TOMBOL MUSIK
+    ========================= -->
+
+    <div class="music-box">
+
+        <button
+            class="music-button"
+            id="musicButton"
+            onclick="toggleMusic()"
+            title="Putar musik"
+        >
+            🎵
+        </button>
+
+        <audio
+            id="backgroundMusic"
+            loop
+        >
+
+            <source
+                src="ssstik.io_1790242004453.mp3"
+                type="audio/mpeg"
+            >
+
+        </audio>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT MUSIK
+    ========================= -->
+
+    <script>
+
+        const music =
+            document.getElementById(
+                "backgroundMusic"
+            );
+
+        const button =
+            document.getElementById(
+                "musicButton"
+            );
+
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play();
+
+                button.innerHTML = "🔊";
+
+            } else {
+
+                music.pause();
+
+                button.innerHTML = "🎵";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>
